@@ -1,0 +1,6 @@
+framework module flutter_bl_umpush {
+  umbrella header "flutter_bl_umpush-umbrella.h"
+
+  export *
+  module * { export * }
+}
