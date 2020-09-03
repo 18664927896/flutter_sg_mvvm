@@ -122,7 +122,7 @@ class Network {
     Options options,
     CancelToken cancelToken,
     bool isShowToast = false, //是否显示提示框
-    bool isBack = false, //是否返回上一页
+    PopPage popPage = PopPage.popNone, //是否返回上一页
     void Function(int, int) onReceiveProgress,
   }) async {
     if (_dio == null) {
@@ -142,7 +142,7 @@ class Network {
         onReceiveProgress: onReceiveProgress,
       );
 
-      responseHandling(res.data, isBack: isBack, isShowToast: isShowToast);
+      responseHandling(res.data, popPage: popPage, isShowToast: isShowToast);
     } catch (e) {
       if (isShowToast) {
         Fluttertoast.showToast(
@@ -161,7 +161,7 @@ class Network {
     Options options,
     CancelToken cancelToken,
     bool isShowToast = false, //是否显示提示框
-    bool isBack = false, //是否返回上一页
+    PopPage popPage = PopPage.popNone, //是否返回上一页
     void Function(int, int) onSendProgress,
     void Function(int, int) onReceiveProgress,
   }) async {
@@ -184,7 +184,7 @@ class Network {
         onSendProgress: onSendProgress,
         onReceiveProgress: onReceiveProgress,
       );
-      responseHandling(res.data, isBack: isBack, isShowToast: isShowToast);
+      responseHandling(res.data, popPage: popPage, isShowToast: isShowToast);
     } catch (e) {
       if (isShowToast) {
         Fluttertoast.showToast(
@@ -198,7 +198,7 @@ class Network {
   static responseHandling(
     ResponseModel data, {
     bool isShowToast, //是否显示提示框
-    bool isBack,
+    PopPage popPage,
   }) {
     if (data.code == 1 && data.bizCode != 20000) {
       if (isShowToast) {
@@ -206,9 +206,9 @@ class Network {
       }
     } else if (data.code == -1 || data.code == -2) {
       AppRoutesManager.pushPage({
-        'page': PushPage.goHomeAndLogin,
-        'code': data.code,
-        'isBack': isBack
+        'page': PushPage.goLogin,
+        'popPage': PopPage.popUp,
+        'code': -data.code
       });
     }
   }

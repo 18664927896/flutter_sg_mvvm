@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_sg_mvvm/page/home/home_page.dart';
+import 'package:flutter_sg_mvvm/page/login/login_page.dart';
 import 'package:flutter_sg_mvvm/page/mall/mall_page.dart';
 
 enum PushPage {
@@ -14,6 +15,13 @@ enum PushPage {
   goMallHome,//商城首页
   goHomeAndLoginToMall, //回首页切跳转登录
   goMe//个人中心
+}
+
+
+enum PopPage {
+  popUp,  //返回上一页
+  popNone, //留在当前页
+  popUntil, //返回到第一页
 }
 
 class AppRoutesManager{
@@ -29,6 +37,8 @@ class AppRoutesManager{
   static const String home = 'home';
 
   static const String mall = 'mall';
+
+  static const String login = 'login';
 
   //添加界面监听
   static void addAppRooutesManageListener(
@@ -66,6 +76,16 @@ class AppRoutesManager{
         }),
       transitionType: TransitionType.native,
     );
+
+    router.define(AppRoutesManager.login, handler: Handler(
+        handlerFunc: (BuildContext context,Map<String, dynamic>params){
+          return LoginPage(
+            code: params['code'] != null ? int.tryParse(params['code'][0]) : -1,
+          );
+        }),
+      transitionType: TransitionType.cupertinoFullScreenDialog,
+    );
+
 
   }
 

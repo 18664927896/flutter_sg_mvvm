@@ -1,5 +1,5 @@
 
-import 'package:flutter_sg_mvvm/listener_manager/listener_manager.dart';
+import 'package:flutter_sg_mvvm/app_manager/listener_manager.dart';
 import 'package:flutter_sg_mvvm/network/network.dart';
 import 'package:uni_links/uni_links.dart';
 

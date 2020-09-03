@@ -4,6 +4,7 @@ import 'package:flutter_sg_mvvm/base/base_state.dart';
 import 'package:flutter_sg_mvvm/page/home/model/product_model.dart';
 import 'package:flutter_sg_mvvm/page/home/view_model/home_view_model.dart';
 import 'package:flutter_sg_mvvm/page/login/login_page.dart';
+import 'package:flutter_sg_mvvm/page/shopping_cart/shopping_cart_page.dart';
 import 'package:flutter_sg_mvvm/widgets/app_bar/custom_app_bar.dart';
 import 'package:flutter_sg_mvvm/widgets/loading_widget/loading_widget.dart';
 import 'package:flutter_sg_mvvm/widgets/refresher_footer/refresher_footer.dart';
@@ -17,9 +18,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends BaseState<HomePage>
+class _HomePageState extends BaseState<HomePage,HomeViewModel>
     with AutomaticKeepAliveClientMixin {
-  HomeViewModel viewModel;
 
   @override
   bool get wantKeepAlive => true;
@@ -45,17 +45,19 @@ class _HomePageState extends BaseState<HomePage>
     );
   }
 
-  Widget initView() {
-    return Consumer<HomeViewModel>(
-      builder: (build, provide, _) {
-        print('Consumer-initView');
-        print('${viewModel.isLoading}');
-        return viewModel.isLoading ? LoadingWidget() : _buildListView();
-      },
-    );
-  }
+//  @override
+//  Widget initView() {
+//    return Consumer<HomeViewModel>(
+//      builder: (build, provide, _) {
+//        print('Consumer-initView');
+//        print('${viewModel.isLoading}');
+//        return viewModel.isLoading ? LoadingWidget() : buildView();
+//      },
+//    );
+//  }
 
-  Widget _buildListView() {
+  @override
+  Widget buildView() {
     return Container(
       child: Column(
         children: <Widget>[
@@ -68,10 +70,10 @@ class _HomePageState extends BaseState<HomePage>
                 controller: viewModel.refreshController,
                 onRefresh: (){
                   viewModel.page = 0;
-                  viewModel.refreshData();
+                  viewModel.refreshData(isShowLoading: false);
                 },
                 onLoading: (){
-                  viewModel.refreshData();
+                  viewModel.refreshData(isShowLoading: false);
                 },
                 child: ListView.builder(
                   itemCount: viewModel.dataList.length,
@@ -128,7 +130,9 @@ class _HomePageState extends BaseState<HomePage>
               )),
           GestureDetector(
             onTap: () {
-              push(page: LoginPage(), popCallback: (dada) {});
+              push(page: ShoppingCartPage(), popCallback: (dada) {
+
+              });
             },
             child: Container(
               width: AppManager.width,
@@ -140,5 +144,12 @@ class _HomePageState extends BaseState<HomePage>
       ),
     );
 
+  }
+
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
   }
 }

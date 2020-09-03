@@ -15,10 +15,9 @@ abstract class BaseViewModel  with ChangeNotifier {
       _isLoading= isLoading;
       this.notifyListeners();
     }
-    
   }
   ///刷新数据
   @protected
-  Future refreshData({bool isShowLoading = false});
+  Future refreshData({bool isShowLoading = true});
 
 }

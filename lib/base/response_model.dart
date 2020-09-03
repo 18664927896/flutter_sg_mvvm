@@ -1,10 +1,10 @@
 class ResponseModel {
-  final int _code;
-  final int _bizCode;
-  final int _errorCode;
-  final String _errorMsg;
-  final dynamic _data;
-  final String _bizMsg;
+  final int _code;//：1正常 -1：未登录 -2：挤下线
+  final int _bizCode;//业务码
+  final int _errorCode;//错误码
+  final String _errorMsg;//错误提示
+  final dynamic _data;//数据主体
+  final String _bizMsg;//业务提示
 
   int get code => _code;
   int get bizCode => _bizCode;
