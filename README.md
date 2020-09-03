@@ -1,4 +1,4 @@
-# flutter-mvvm-demo
+# flutter_sg_mvvm
 
 flutter MVVM实现
 
