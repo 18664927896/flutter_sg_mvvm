@@ -128,12 +128,6 @@
       "languageVersion": "2.2"
     },
     {
-      "name": "flutter_bl_umpush",
-      "rootUri": "file:///Users/shanggang/.pub-cache/git/flutter_bl_umpush-f7ef69c4d83e19c7b54b609d4652308be436155a/",
-      "packageUri": "lib/",
-      "languageVersion": "2.1"
-    },
-    {
       "name": "flutter_cache_manager",
       "rootUri": "file:///Users/shanggang/.pub-cache/hosted/pub.flutter-io.cn/flutter_cache_manager-1.1.3",
       "packageUri": "lib/",
@@ -428,7 +422,7 @@
       "languageVersion": "2.3"
     }
   ],
-  "generated": "2020-08-26T02:16:03.574490Z",
+  "generated": "2020-09-04T02:16:42.318387Z",
   "generator": "pub",
   "generatorVersion": "2.8.0-dev.5.0.flutter-fc3af737c7"
 }

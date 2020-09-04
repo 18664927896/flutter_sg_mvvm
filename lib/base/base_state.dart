@@ -20,28 +20,9 @@ abstract class BaseState<T extends StatefulWidget, E extends BaseViewModel> exte
     return build(context);
   }
 
-  @override
-  void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
-    super.didChangeDependencies();
-    print("didChangeDependencies: ${pageName}界面");
-  }
 
-  @override
-  void didUpdateWidget(StatefulWidget oldWidget) {
-    // TODO: implement didUpdateWidget
-    super.didUpdateWidget(oldWidget);
-    print("didUpdateWidget: ${pageName}界面");
-  }
 
-  @override
-  void deactivate() {
-    // TODO: implement deactivate
-    super.deactivate();
-    print("deactivate:${pageName}界面");
-  }
-
-  //公共UI处理，如不想使用公共部分，直接在子类重写initView()函数
+  //公共UI处理，不用在每个page里面处理loading的逻辑，如不想使用公共部分，直接在子类重写initView()函数
   Widget initView() {
     return Consumer<E>(
       builder: (build, provide, _) {
@@ -78,6 +59,27 @@ abstract class BaseState<T extends StatefulWidget, E extends BaseViewModel> exte
         popCallback(data);
       }
     });
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    print("didChangeDependencies: ${pageName}界面");
+  }
+
+  @override
+  void didUpdateWidget(StatefulWidget oldWidget) {
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+    print("didUpdateWidget: ${pageName}界面");
+  }
+
+  @override
+  void deactivate() {
+    // TODO: implement deactivate
+    super.deactivate();
+    print("deactivate:${pageName}界面");
   }
 
   @override

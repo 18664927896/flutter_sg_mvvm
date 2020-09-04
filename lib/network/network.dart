@@ -54,7 +54,7 @@ class Network {
           return Platform.isAndroid;
         };
 
-        client.findProxy = (uri) {
+        client.findProxy = (uri) {//注入代理
           return "PROXY ${AppManager.httpProxy}";
         };
       };
@@ -173,7 +173,6 @@ class Network {
     }
     path = baseUrl + Config.BASE_URL;
     var res;
-
     try {
       res = await _dio.post<ResponseModel>(
         path,

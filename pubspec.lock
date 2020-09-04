@@ -146,15 +146,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_bl_umpush:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: f7ef69c4d83e19c7b54b609d4652308be436155a
-      url: "http://gitlab.wonhigh.cn/front-dev/flutter-com/flutter_bl_umpush.git"
-    source: git
-    version: "0.0.7"
   flutter_cache_manager:
     dependency: transitive
     description:

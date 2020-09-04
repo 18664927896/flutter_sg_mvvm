@@ -40,9 +40,7 @@ dependencies:
   device_info: ^0.4.1+1
   shared_preferences: ^0.5.4+6
   uni_links: ^0.2.0
-  flutter_bl_umpush:
-    git:
-      url: "http://gitlab.wonhigh.cn/front-dev/flutter-com/flutter_bl_umpush.git"
+
 
 dev_dependencies:
   flutter_test:

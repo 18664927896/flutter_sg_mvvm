@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_sg_mvvm/app_manager/app_routes_manager.dart';
+import 'package:flutter_sg_mvvm/network/network.dart';
 import 'package:flutter_sg_mvvm/utils/packetcapture/packetcapture.dart';
 import 'package:flutter_sg_mvvm/widgets/main_bottom_bar/main_bottom_bar.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -28,7 +29,9 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Packetcapture.initUniLinks();
+    Packetcapture.initUniLinks(callBack: (host,port){
+      Network.setHttpProxy(host, port);
+    });
   }
   @override
   Widget build(BuildContext context) {

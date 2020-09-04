@@ -149,13 +149,6 @@
             </list>
           </value>
         </entry>
-        <entry key="flutter_bl_umpush">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/git/flutter_bl_umpush-f7ef69c4d83e19c7b54b609d4652308be436155a/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="flutter_cache_manager">
           <value>
             <list>
@@ -495,7 +488,6 @@
       </option>
     </properties>
     <CLASSES>
-      <root url="file://$USER_HOME$/.pub-cache/git/flutter_bl_umpush-f7ef69c4d83e19c7b54b609d4652308be436155a/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/app_settings-2.0.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/archive-2.0.11/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/args-1.5.2/lib" />

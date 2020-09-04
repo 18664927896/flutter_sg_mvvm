@@ -1,16 +1,12 @@
-import 'dart:io';
+
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bl_umpush/flutter_bl_umpush.dart';
 import 'package:flutter_sg_mvvm/app_manager/app_manager.dart';
 import 'package:flutter_sg_mvvm/app_manager/app_routes_manager.dart';
-import 'package:flutter_sg_mvvm/app_manager/listener_manager.dart';
 import 'package:flutter_sg_mvvm/page/find/find_page.dart';
 import 'package:flutter_sg_mvvm/page/home/home_page.dart';
-import 'package:flutter_sg_mvvm/page/login/login_page.dart';
 import 'package:flutter_sg_mvvm/page/mall/mall_page.dart';
 import 'package:flutter_sg_mvvm/page/mine/mine_page.dart';
-import 'package:flutter_sg_mvvm/page/shopping_cart/shopping_cart_page.dart';
 import 'package:flutter_sg_mvvm/widgets/icons/icons.dart';
 
 class MainBottomBar extends StatefulWidget {

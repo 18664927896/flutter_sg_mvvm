@@ -61,7 +61,7 @@ class AppRoutesManager{
 
 
   //配置路由
-  static void configureRoutes(Router router) {
+  static void configureRoutes(Router router) {//注册路由
 
     router.define(AppRoutesManager.home, handler: Handler(
       handlerFunc: (BuildContext context,Map<String, dynamic>params){
