@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
         hideFooterWhenNotFull: false, // Viewport不满一屏时,禁用上拉加载更多功能
         enableBallisticLoad: true, // 可以通过惯性滑动触发加载更多
         child: MaterialApp(
-          title: '滔搏运动',
+          title: 'mvvm demo',
           debugShowCheckedModeBanner: false,
           localizationsDelegates: [
             //此处
